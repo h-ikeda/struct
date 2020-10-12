@@ -1,0 +1,132 @@
+<h1>Show Inserted wooden siding wall</h1>
+
+<%= if @live_action in [:edit] do %>
+  <%= live_modal @socket, StructWeb.InsertedWoodenSidingWallLive.FormComponent,
+    id: @inserted_wooden_siding_wall.id,
+    title: @page_title,
+    action: @live_action,
+    inserted_wooden_siding_wall: @inserted_wooden_siding_wall,
+    return_to: Routes.inserted_wooden_siding_wall_show_path(@socket, :show, @inserted_wooden_siding_wall) %>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @inserted_wooden_siding_wall.name %>
+  </li>
+
+  <li>
+    <strong>Single shear connecter rigidity:</strong>
+    <%= @inserted_wooden_siding_wall.single_shear_connecter_rigidity %>
+  </li>
+
+  <li>
+    <strong>Number of shear connecters on line:</strong>
+    <%= @inserted_wooden_siding_wall.number_of_shear_connecters_on_line %>
+  </li>
+
+  <li>
+    <strong>Siding width:</strong>
+    <%= @inserted_wooden_siding_wall.siding_width %>
+  </li>
+
+  <li>
+    <strong>Frame inner height:</strong>
+    <%= @inserted_wooden_siding_wall.frame_inner_height %>
+  </li>
+
+  <li>
+    <strong>Frame inner width:</strong>
+    <%= @inserted_wooden_siding_wall.frame_inner_width %>
+  </li>
+
+  <li>
+    <strong>Friction coefficient between sidings:</strong>
+    <%= @inserted_wooden_siding_wall.friction_coefficient_between_sidings %>
+  </li>
+
+  <li>
+    <strong>Shear modulus of sidings:</strong>
+    <%= @inserted_wooden_siding_wall.shear_modulus_of_sidings %>
+  </li>
+
+  <li>
+    <strong>Siding thickness:</strong>
+    <%= @inserted_wooden_siding_wall.siding_thickness %>
+  </li>
+
+  <li>
+    <strong>Fiber direction elasticity of sidings:</strong>
+    <%= @inserted_wooden_siding_wall.fiber_direction_elasticity_of_sidings %>
+  </li>
+
+  <li>
+    <strong>Siding elasticity ratio:</strong>
+    <%= @inserted_wooden_siding_wall.siding_elasticity_ratio %>
+  </li>
+
+  <li>
+    <strong>Fiber orthogonal direction elasticity of columns:</strong>
+    <%= @inserted_wooden_siding_wall.fiber_orthogonal_direction_elasticity_of_columns %>
+  </li>
+
+  <li>
+    <strong>Fiber orthogonal direction elasticity of beams:</strong>
+    <%= @inserted_wooden_siding_wall.fiber_orthogonal_direction_elasticity_of_beams %>
+  </li>
+
+  <li>
+    <strong>Column depth:</strong>
+    <%= @inserted_wooden_siding_wall.column_depth %>
+  </li>
+
+  <li>
+    <strong>Beam height:</strong>
+    <%= @inserted_wooden_siding_wall.beam_height %>
+  </li>
+
+  <li>
+    <strong>Column width:</strong>
+    <%= @inserted_wooden_siding_wall.column_width %>
+  </li>
+
+  <li>
+    <strong>Beam width:</strong>
+    <%= @inserted_wooden_siding_wall.beam_width %>
+  </li>
+
+  <li>
+    <strong>Substitution coefficient of columns:</strong>
+    <%= @inserted_wooden_siding_wall.substitution_coefficient_of_columns %>
+  </li>
+
+  <li>
+    <strong>Substitution coefficient of beams:</strong>
+    <%= @inserted_wooden_siding_wall.substitution_coefficient_of_beams %>
+  </li>
+
+  <li>
+    <strong>Single shear connecter yield resistance:</strong>
+    <%= @inserted_wooden_siding_wall.single_shear_connecter_yield_resistance %>
+  </li>
+
+  <li>
+    <strong>Fiber direction compressive strength of sidings:</strong>
+    <%= @inserted_wooden_siding_wall.fiber_direction_compressive_strength_of_sidings %>
+  </li>
+
+  <li>
+    <strong>Fiber orthogonal direction compressive strength of sidings:</strong>
+    <%= @inserted_wooden_siding_wall.fiber_orthogonal_direction_compressive_strength_of_sidings %>
+  </li>
+
+  <li>
+    <strong>Yield judgement ratio:</strong>
+    <%= @inserted_wooden_siding_wall.yield_judgement_ratio %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.inserted_wooden_siding_wall_show_path(@socket, :edit, @inserted_wooden_siding_wall), class: "button" %></span>
+<span><%= live_redirect "Back", to: Routes.inserted_wooden_siding_wall_index_path(@socket, :index) %></span>

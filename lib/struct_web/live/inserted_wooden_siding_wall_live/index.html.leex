@@ -1,0 +1,79 @@
+<h1>Listing Inserted wooden siding walls</h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal @socket, StructWeb.InsertedWoodenSidingWallLive.FormComponent,
+    id: @inserted_wooden_siding_wall.id || :new,
+    title: @page_title,
+    action: @live_action,
+    inserted_wooden_siding_wall: @inserted_wooden_siding_wall,
+    return_to: Routes.inserted_wooden_siding_wall_index_path(@socket, :index) %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Single shear connecter rigidity</th>
+      <th>Number of shear connecters on line</th>
+      <th>Siding width</th>
+      <th>Frame inner height</th>
+      <th>Frame inner width</th>
+      <th>Friction coefficient between sidings</th>
+      <th>Shear modulus of sidings</th>
+      <th>Siding thickness</th>
+      <th>Fiber direction elasticity of sidings</th>
+      <th>Siding elasticity ratio</th>
+      <th>Fiber orthogonal direction elasticity of columns</th>
+      <th>Fiber orthogonal direction elasticity of beams</th>
+      <th>Column depth</th>
+      <th>Beam height</th>
+      <th>Column width</th>
+      <th>Beam width</th>
+      <th>Substitution coefficient of columns</th>
+      <th>Substitution coefficient of beams</th>
+      <th>Single shear connecter yield resistance</th>
+      <th>Fiber direction compressive strength of sidings</th>
+      <th>Fiber orthogonal direction compressive strength of sidings</th>
+      <th>Yield judgement ratio</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="inserted_wooden_siding_walls">
+    <%= for inserted_wooden_siding_wall <- @inserted_wooden_siding_walls do %>
+      <tr id="inserted_wooden_siding_wall-<%= inserted_wooden_siding_wall.id %>">
+        <td><%= inserted_wooden_siding_wall.name %></td>
+        <td><%= inserted_wooden_siding_wall.single_shear_connecter_rigidity %></td>
+        <td><%= inserted_wooden_siding_wall.number_of_shear_connecters_on_line %></td>
+        <td><%= inserted_wooden_siding_wall.siding_width %></td>
+        <td><%= inserted_wooden_siding_wall.frame_inner_height %></td>
+        <td><%= inserted_wooden_siding_wall.frame_inner_width %></td>
+        <td><%= inserted_wooden_siding_wall.friction_coefficient_between_sidings %></td>
+        <td><%= inserted_wooden_siding_wall.shear_modulus_of_sidings %></td>
+        <td><%= inserted_wooden_siding_wall.siding_thickness %></td>
+        <td><%= inserted_wooden_siding_wall.fiber_direction_elasticity_of_sidings %></td>
+        <td><%= inserted_wooden_siding_wall.siding_elasticity_ratio %></td>
+        <td><%= inserted_wooden_siding_wall.fiber_orthogonal_direction_elasticity_of_columns %></td>
+        <td><%= inserted_wooden_siding_wall.fiber_orthogonal_direction_elasticity_of_beams %></td>
+        <td><%= inserted_wooden_siding_wall.column_depth %></td>
+        <td><%= inserted_wooden_siding_wall.beam_height %></td>
+        <td><%= inserted_wooden_siding_wall.column_width %></td>
+        <td><%= inserted_wooden_siding_wall.beam_width %></td>
+        <td><%= inserted_wooden_siding_wall.substitution_coefficient_of_columns %></td>
+        <td><%= inserted_wooden_siding_wall.substitution_coefficient_of_beams %></td>
+        <td><%= inserted_wooden_siding_wall.single_shear_connecter_yield_resistance %></td>
+        <td><%= inserted_wooden_siding_wall.fiber_direction_compressive_strength_of_sidings %></td>
+        <td><%= inserted_wooden_siding_wall.fiber_orthogonal_direction_compressive_strength_of_sidings %></td>
+        <td><%= inserted_wooden_siding_wall.yield_judgement_ratio %></td>
+
+        <td>
+          <span><%= live_redirect "Show", to: Routes.inserted_wooden_siding_wall_show_path(@socket, :show, inserted_wooden_siding_wall) %></span>
+          <span><%= live_patch "Edit", to: Routes.inserted_wooden_siding_wall_index_path(@socket, :edit, inserted_wooden_siding_wall) %></span>
+          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: inserted_wooden_siding_wall.id, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<span><%= live_patch "New Inserted wooden siding wall", to: Routes.inserted_wooden_siding_wall_index_path(@socket, :new) %></span>

@@ -1,0 +1,102 @@
+<h2><%= @title %></h2>
+
+<%= f = form_for @changeset, "#",
+  id: "inserted_wooden_siding_wall-form",
+  phx_target: @myself,
+  phx_change: "validate",
+  phx_submit: "save" %>
+
+  <%= label f, :name %>
+  <%= text_input f, :name %>
+  <%= error_tag f, :name %>
+
+  <%= label f, :single_shear_connecter_rigidity %>
+  <%= number_input f, :single_shear_connecter_rigidity, step: "any" %>
+  <%= error_tag f, :single_shear_connecter_rigidity %>
+
+  <%= label f, :number_of_shear_connecters_on_line %>
+  <%= number_input f, :number_of_shear_connecters_on_line %>
+  <%= error_tag f, :number_of_shear_connecters_on_line %>
+
+  <%= label f, :siding_width %>
+  <%= number_input f, :siding_width, step: "any" %>
+  <%= error_tag f, :siding_width %>
+
+  <%= label f, :frame_inner_height %>
+  <%= number_input f, :frame_inner_height, step: "any" %>
+  <%= error_tag f, :frame_inner_height %>
+
+  <%= label f, :frame_inner_width %>
+  <%= number_input f, :frame_inner_width, step: "any" %>
+  <%= error_tag f, :frame_inner_width %>
+
+  <%= label f, :friction_coefficient_between_sidings %>
+  <%= number_input f, :friction_coefficient_between_sidings, step: "any" %>
+  <%= error_tag f, :friction_coefficient_between_sidings %>
+
+  <%= label f, :shear_modulus_of_sidings %>
+  <%= number_input f, :shear_modulus_of_sidings, step: "any" %>
+  <%= error_tag f, :shear_modulus_of_sidings %>
+
+  <%= label f, :siding_thickness %>
+  <%= number_input f, :siding_thickness, step: "any" %>
+  <%= error_tag f, :siding_thickness %>
+
+  <%= label f, :fiber_direction_elasticity_of_sidings %>
+  <%= number_input f, :fiber_direction_elasticity_of_sidings, step: "any" %>
+  <%= error_tag f, :fiber_direction_elasticity_of_sidings %>
+
+  <%= label f, :siding_elasticity_ratio %>
+  <%= number_input f, :siding_elasticity_ratio, step: "any" %>
+  <%= error_tag f, :siding_elasticity_ratio %>
+
+  <%= label f, :fiber_orthogonal_direction_elasticity_of_columns %>
+  <%= number_input f, :fiber_orthogonal_direction_elasticity_of_columns, step: "any" %>
+  <%= error_tag f, :fiber_orthogonal_direction_elasticity_of_columns %>
+
+  <%= label f, :fiber_orthogonal_direction_elasticity_of_beams %>
+  <%= number_input f, :fiber_orthogonal_direction_elasticity_of_beams, step: "any" %>
+  <%= error_tag f, :fiber_orthogonal_direction_elasticity_of_beams %>
+
+  <%= label f, :column_depth %>
+  <%= number_input f, :column_depth, step: "any" %>
+  <%= error_tag f, :column_depth %>
+
+  <%= label f, :beam_height %>
+  <%= number_input f, :beam_height, step: "any" %>
+  <%= error_tag f, :beam_height %>
+
+  <%= label f, :column_width %>
+  <%= number_input f, :column_width, step: "any" %>
+  <%= error_tag f, :column_width %>
+
+  <%= label f, :beam_width %>
+  <%= number_input f, :beam_width, step: "any" %>
+  <%= error_tag f, :beam_width %>
+
+  <%= label f, :substitution_coefficient_of_columns %>
+  <%= number_input f, :substitution_coefficient_of_columns, step: "any" %>
+  <%= error_tag f, :substitution_coefficient_of_columns %>
+
+  <%= label f, :substitution_coefficient_of_beams %>
+  <%= number_input f, :substitution_coefficient_of_beams, step: "any" %>
+  <%= error_tag f, :substitution_coefficient_of_beams %>
+
+  <%= label f, :single_shear_connecter_yield_resistance %>
+  <%= number_input f, :single_shear_connecter_yield_resistance, step: "any" %>
+  <%= error_tag f, :single_shear_connecter_yield_resistance %>
+
+  <%= label f, :fiber_direction_compressive_strength_of_sidings %>
+  <%= number_input f, :fiber_direction_compressive_strength_of_sidings, step: "any" %>
+  <%= error_tag f, :fiber_direction_compressive_strength_of_sidings %>
+
+  <%= label f, :fiber_orthogonal_direction_compressive_strength_of_sidings %>
+  <%= number_input f, :fiber_orthogonal_direction_compressive_strength_of_sidings, step: "any" %>
+  <%= error_tag f, :fiber_orthogonal_direction_compressive_strength_of_sidings %>
+
+  <%= label f, :yield_judgement_ratio %>
+  <%= number_input f, :yield_judgement_ratio, step: "any" %>
+  <%= error_tag f, :yield_judgement_ratio %>
+
+  <%= submit "Save", phx_disable_with: "Saving..." %>
+</form>
